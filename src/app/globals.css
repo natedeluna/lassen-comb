@@ -8,6 +8,11 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+* {
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: 100%
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -16,18 +21,47 @@
   }
 }
 
-body {
+@font-face {
+  font-family: 'Baskervville';
+  src: url('../../public/fonts/Baskervville-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Haskoy-reg';
+  src: url('../../public/fonts/Haskoy-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Haskoy-med';
+  src: url('../../public/fonts/Haskoy-Medium.woff2') format('woff2');
+}
+
+h1.hero_1_title {
+  @apply text-6xl font-normal text-balance;
+  font-family: 'Baskervville';
+  text-align: center;
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+body, html {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  overflow-x: hidden;
+  position: relative;
+  text-rendering: geometricPrecision;
+  background-color: #fafafa;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+div {
+  @apply text-2xl font-normal text-balance;
+  font-family: 'Haskoy-reg';
+  line-height: 48px;
+  font-size: 36px;
 }
