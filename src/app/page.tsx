@@ -9,11 +9,23 @@ export default function Home() {
       <h1 className="hero_1_title max-w-3xl">Design supplier based out of Austin, TX
       </h1>
       <section>
-        <div className="my-12"></div>
-        <ScrollTextAppear 
-          text="We use a crossfunctional approach of design and engineering to craft timeless and powerful aesthetics.
-                " 
-          />
+        <ScrollTextAppear>
+          <div>
+            We are a design supplier based out of Austin, TX. We offer a wide range of design services to help you with your project. We have a team of experienced designers who can help you with any design project you have. Whether you need a logo, website, or any other design service, we can help. Contact us today to learn more about our design services and how we can help you with your project.
+          </div>
+          <div>
+            We are a design supplier based out of Austin, TX. We offer a wide range of design services to help you with your project. We have a team of experienced designers who can help you with any design project you have. Whether you need a logo, website, or any other design service, we can help. Contact us today to learn more about our design services and how we can help you with your project.
+          </div>
+          <div>
+            We are a design supplier based out of Austin, TX. We offer a wide range of design services to help you with your project. We have a team of experienced designers who can help you with any design project you have. Whether you need a logo, website, or any other design service, we can help. Contact us today to learn more about our design services and how we can help you with your project.
+          </div>
+          <div>
+            We are a design supplier based out of Austin, TX. We offer a wide range of design services to help you with your project. We have a team of experienced designers who can help you with any design project you have. Whether you need a logo, website, or any other design service, we can help. Contact us today to learn more about our design services and how we can help you with your project.
+          </div>
+          <div>
+            We are a design supplier based out of Austin, TX. We offer a wide range of design services to help you with your project. We have a team of experienced designers who can help you with any design project you have. Whether you need a logo, website, or any other design service, we can help. Contact us today to learn more about our design services and how we can help you with your project.
+          </div>
+        </ScrollTextAppear>
         <div className="my-12"></div>
       </section>
     </main>

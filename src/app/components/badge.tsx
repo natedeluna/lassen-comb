@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect} from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+
 interface BadgeProps {
     texts: string[];
     color: string;
@@ -9,31 +10,40 @@ interface BadgeProps {
 
 const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
     const [index, setIndex] = useState(0);
-    const [badgeWidth, setBadgeWidth] = useState(0);
+    const [badgeWidth, setBadgeWidth] = useState(texts[index].length * 8);
 
     useEffect(() => {
         const interval = setInterval(() => {
+            console.log(texts[index].length)
+            const previousIndex = index === 0 ? texts.length - 1 : index - 1;
             setIndex((prevIndex) => (prevIndex + 1) % texts.length);
-        }, 10000);
+            
+            setTimeout(() => {
+                setBadgeWidth(8 * texts[previousIndex].length);
+            }, 250);
+        }, 4000);
         return () => clearInterval(interval);
-    }, [texts]);
+    }, [index]);
 
     return (
-        <motion.div style={{ backgroundColor: color, }}
-            className='flex flex-col items-center justify-center rounded-full px-2 py-1 border my-2 text-sm '
+        <motion.div style={{ width: `${badgeWidth}px` }}
+            className='relative flex flex-col bg-stone-50 border-stone-500 text-stone-900 items-center justify-center rounded-full px-3 py-1 border h-[30px]  my-2 text-sm transition-width duration-500 ease-in-out transition-opacity text-nowrap '
             layout
-            transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+            transition={{ type: 'spring', stiffness: 800, damping: 35 }}
             >
-            <AnimatePresence mode='wait'>
-                <motion.span
-                    key={texts[index]}
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ type: 'spring',bounce: .05, stiffness: 450, damping: 30}}
-                >
-                    {texts[index]}
-                </motion.span>
+            <AnimatePresence mode='out-in'>
+                {texts.map ((text, i) => (
+                    <motion.span 
+                        className='absolute text-stone-900'
+                        key={text}
+                        initial={{ opacity: 0}}
+                        animate={{ opacity: i===index ? 1 : 0}}
+                        exit={{ opacity: 0, }}
+                        transition={{stiffness: 800, damping: 30, delay: i === index ? 0.25 : 0}}
+                    >
+                            {text}
+                    </motion.span>
+                ))}
             </AnimatePresence>
         </motion.div>
     );

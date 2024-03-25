@@ -1,13 +1,13 @@
 "use client"
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface ScrollTextAppearProps {
-    text: string;
+    children?: React.ReactNode;
 }
 
-const ScrollTextAppear: React.FC<ScrollTextAppearProps> = ({ text }) => {
-    const words = text.split(" ");
+const ScrollTextAppear: React.FC<ScrollTextAppearProps> = ({ children }) => {;
     const observer = useRef<IntersectionObserver | null>(null);
+
     const callback = (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -39,14 +39,7 @@ const ScrollTextAppear: React.FC<ScrollTextAppearProps> = ({ text }) => {
 
     return (
         <div className="scroll-text-appear">
-            {words.map((word, index) => (
-                <span
-                    key={index}
-                    className='text-stone-400 transition-colors duration-500'>
-                    {word+" "} 
-                </span>
-            ))
-            }
+            {children}
         </div>
     );
 };
