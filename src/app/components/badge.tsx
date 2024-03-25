@@ -10,31 +10,54 @@ interface BadgeProps {
 
 const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
     const [index, setIndex] = useState(0);
-    const [badgeWidth, setBadgeWidth] = useState(texts[index].length * 8);
-
+    const [badgeWidth, setBadgeWidth] = useState(172);
+    const previousIndex = index === 0 ? texts.length - 1 : index - 1;
+    
+    
     useEffect(() => {
         const interval = setInterval(() => {
-            console.log(texts[index].length)
-            const previousIndex = index === 0 ? texts.length - 1 : index - 1;
             setIndex((prevIndex) => (prevIndex + 1) % texts.length);
-            
-            setTimeout(() => {
-                setBadgeWidth(8 * texts[previousIndex].length);
-            }, 250);
-        }, 4000);
+            const measureSpan = document.getElementById('measure');
+            if (measureSpan) {
+                const width:any = parseFloat(window.getComputedStyle(measureSpan).width);
+                setTimeout(() => {
+                    setBadgeWidth(width+24);
+                }, 250);
+            }
+        }, 12000);
         return () => clearInterval(interval);
     }, [index]);
-
     return (
-        <motion.div style={{ width: `${badgeWidth}px` }}
-            className='relative flex flex-col bg-stone-50 border-stone-500 text-stone-900 items-center justify-center rounded-full px-3 py-1 border h-[30px]  my-2 text-sm transition-width duration-500 ease-in-out transition-opacity text-nowrap '
+        <motion.div style={{ 
+            width: `${badgeWidth}px`,
+            boxShadow: `inset 0px -1.5px 0 1px #e7e5e4`,
+        }}
+            className='
+                relative 
+                flex 
+                flex-col 
+                bg-stone-50 
+                border-stone-300 
+                border-[.5px]
+                items-center 
+                justify-center 
+                rounded-2xl
+                py-1
+                h-[30px] 
+                my-3 
+                text-sm 
+                transition-width 
+                duration-500 
+                ease-in-out
+                transition-opacity 
+                text-nowrap '
             layout
             transition={{ type: 'spring', stiffness: 800, damping: 35 }}
             >
             <AnimatePresence mode='out-in'>
                 {texts.map ((text, i) => (
                     <motion.span 
-                        className='absolute text-stone-900'
+                        className='absolute text-stone-500 font-[Haskoy] font-[400]'
                         key={text}
                         initial={{ opacity: 0}}
                         animate={{ opacity: i===index ? 1 : 0}}
@@ -45,6 +68,9 @@ const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
                     </motion.span>
                 ))}
             </AnimatePresence>
+            <span id="measure" style={{visibility: 'hidden', whiteSpace: 'pre', fontFamily: 'Haskoy', fontSize: '14px'}}>
+                {texts[previousIndex]}
+            </span>
         </motion.div>
     );
 };
