@@ -41,9 +41,18 @@
   src: url('../../public/fonts/haskoy[wght].ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'RosindaleDisplayNarrow-Regular';
+  src: url('../../public/fonts/RoslindaleDisplayNarrow-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'RosindaleDisplayNarrow-Light';
+  src: url('../../public/fonts/RoslindaleDisplayNarrow-Light.otf') format('opentype');
+}
+
 h1.hero_1_title {
   @apply text-6xl font-normal text-balance;
-  font-family: 'Baskervville';
+  font-family: 'RosindaleDisplayNarrow-Light';
   text-align: center;
   font-size: 48px;
   line-height: 1.2;

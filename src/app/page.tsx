@@ -2,9 +2,10 @@
 import Badge from "@/app/components/badge";
 import SeparatorVerticalTopScrew from "./components/separator_vertical_top_screw";
 import ScrollTextAppear from "@/app/components/scroll_text_appear";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+
   const handleScroll = () => {
     const scrollHeight = document.documentElement.scrollHeight;
     console.log("Scroll Height:", scrollHeight);
@@ -27,7 +28,8 @@ export default function Home() {
         texts={["Built to world standards", "Design subscription"]} 
         color="whitesmoke" />
       <SeparatorVerticalTopScrew className="transform rotate-180 opacity-75"/>
-      <h1 className="hero_1_title max-w-3xl my-1">Lassen comb<br/>A design supplier based out of Austin, TX
+      <h1 className="hero_1_title max-w-3xl my-1 text-stone-800">Lassen comb<br/>
+      <span className="text-stone-500">A design supplier based out of Austin, TX</span>
       </h1>
       <SeparatorVerticalTopScrew className="transform translate-y-[12px] rotate-0 opacity-75"/>
       <section className="text-stone-300 scrollForOpacity">
@@ -41,10 +43,8 @@ export default function Home() {
           
         </div>
         <div>
-          From the abstract to the concrete:
-          <span>
-            <img src="/images/lightning.png" alt="hero_1" className=" w-14 inline mx-2" />
-          </span>
+          From the abstract to the concrete
+          <img src="/images/lightning_alt.png" alt="hero_1" className=" w-20 inline mx-2 transform translate-y-[-5px]" />
           a holistic approach to crafting a powerful aesthetics language.
         </div>
       <div className="my-12"></div>
