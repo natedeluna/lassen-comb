@@ -57,7 +57,7 @@ const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
             <AnimatePresence mode='out-in'>
                 {texts.map ((text, i) => (
                     <motion.span 
-                        className='absolute text-stone-500 font-[Haskoy] font-[400]'
+                        className='absolute text-stone-600 font-[Haskoy] font-[400] transform translate-y-[-.5px]'
                         key={text}
                         initial={{ opacity: 0}}
                         animate={{ opacity: i===index ? 1 : 0}}

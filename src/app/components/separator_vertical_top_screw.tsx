@@ -14,7 +14,7 @@ const SeparatorVerticalTopScrew: React.FC<SeparatorVerticalTopScrewProps> = ({ c
             </g>
             <path d="M9.4019 6.14022L9.14887 5.45642C8.75423 4.38992 7.24577 4.38992 6.85113 5.45642L6.5981 6.14022C6.51961 6.35235 6.35235 6.51961 6.14022 6.5981L5.45642 6.85113C4.38992 7.24577 4.38992 8.75423 5.45642 9.14887L6.14022 9.4019C6.35235 9.48039 6.51961 9.64765 6.5981 9.85978L6.85113 10.5436C7.24577 11.6101 8.75423 11.6101 9.14887 10.5436L9.4019 9.85978C9.48039 9.64765 9.64765 9.48039 9.85978 9.4019L10.5436 9.14887C11.6101 8.75423 11.6101 7.24577 10.5436 6.85113L9.85978 6.5981C9.64765 6.51961 9.48039 6.35235 9.4019 6.14022Z" stroke="#A3A2A2" strokeWidth="0.45"/>
             <defs>
-            <filter id="filter0_i_999_963" x="4.43164" y="4.43152" width="7.13672" height="7.29214" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <filter id="filter0_i_999_963" x="4.43164" y="4.43152" width="7.13672" height="7.29214" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
             <feFlood floodOpacity="0" result="BackgroundImageFix"/>
             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
             <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
@@ -25,8 +25,8 @@ const SeparatorVerticalTopScrew: React.FC<SeparatorVerticalTopScrewProps> = ({ c
             <feBlend mode="normal" in2="shape" result="effect1_innerShadow_999_963"/>
             </filter>
             <linearGradient id="paint0_linear_999_963" x1="6.75" y1="14" x2="6.75" y2="71" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#8000FF"/>
-            <stop offset="0.98" stop-color="#00FFFF"/>
+            <stop stopColor="#8000FF"/>
+            <stop offset="0.98" stopColor="#00FFFF"/>
             </linearGradient>
             </defs>
         </svg>
