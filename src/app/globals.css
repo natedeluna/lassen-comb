@@ -50,7 +50,7 @@
   src: url('../../public/fonts/RoslindaleDisplayNarrow-Light.otf') format('opentype');
 }
 
-h1.hero_1_title {
+.hero_1_title {
   @apply text-6xl font-normal text-balance;
   font-family: 'RosindaleDisplayNarrow-Light';
   text-align: center;
@@ -73,12 +73,26 @@ body, html {
   }
 }
 
-div {
+.main-text {
   @apply text-2xl font-normal text-balance;
-  font-family: 'Haskoy';
+  font-family: 'Haskoy-reg';
   font-weight: 325;
   font-size: 40px;
   line-height: 1.62;
   letter-spacing: -.7px;
   font-feature-settings: "ordn" on;
+}
+
+.rainbow-text {
+  background: linear-gradient(to right, #2e0f84 10%, #375dfb 20%, #f17b2c 30%, #f2ae40 50%, #df1c41 70%, #38c793 90%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.highlight {
+  @apply text-stone-700
+}
+
+span {
+  line-height: 1.4;
 }
