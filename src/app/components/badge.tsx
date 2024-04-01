@@ -16,22 +16,28 @@ const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
     
     useEffect(() => {
         const interval = setInterval(() => {
-            setIndex((prevIndex) => (prevIndex + 1) % texts.length);
-            const measureSpan = document.getElementById('measure');
-            if (measureSpan) {
-                const width:any = parseFloat(window.getComputedStyle(measureSpan).width);
-                setTimeout(() => {
-                    setBadgeWidth(width+24);
-                }, 250);
-            }
+            changeBadgeText()
         }, 12000);
         return () => clearInterval(interval);
     }, [index]);
+
+    const changeBadgeText = () => {
+        setIndex((prevIndex) => (prevIndex + 1) % texts.length);
+        const measureSpan = document.getElementById('measure');
+        if (measureSpan) {
+            const width:any = parseFloat(window.getComputedStyle(measureSpan).width);
+            setTimeout(() => {
+                setBadgeWidth(width+24);
+            }, 250);
+        }
+      };
+
     return (
         <motion.div style={{ 
             width: `${badgeWidth}px`,
             boxShadow: `inset 0px -1.5px 0 1px #e7e5e4`,
         }}
+            onClick={() => changeBadgeText()}
             className='
                 relative 
                 flex 
@@ -39,9 +45,9 @@ const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
                 bg-stone-50 
                 border-stone-300 
                 border-[.5px]
+                rounded-2xl
                 items-center 
                 justify-center 
-                rounded-2xl
                 py-1
                 h-[30px] 
                 my-3 
@@ -57,7 +63,7 @@ const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
             <AnimatePresence mode='out-in'>
                 {texts.map ((text, i) => (
                     <motion.span 
-                        className='absolute text-stone-600 font-[Haskoy] font-[400] transform translate-y-[-.5px]'
+                        className='absolute text-stone-500 text-[13px] font-[555] transform translate-y-[-.5px]'
                         key={text}
                         initial={{ opacity: 0}}
                         animate={{ opacity: i===index ? 1 : 0}}

@@ -9,7 +9,6 @@
 }
 
 * {
-  -webkit-user-select: none;
   -webkit-text-size-adjust: 100%
 }
 
@@ -50,9 +49,19 @@
   src: url('../../public/fonts/RoslindaleDisplayNarrow-Light.otf') format('opentype');
 }
 
+@font-face { 
+  font-family: 'RoslindaleDisplayCondensed-Light'; 
+  src: url('../../public/fonts/RoslindaleDisplayCondensed-Light-Testing.woff2') format('woff2'); 
+}
+
+@font-face {
+  font-family: 'FamiljenGrotesk';
+  src: url('../../public/fonts/FamiljenGrotesk-VariableFont_wght.ttf') format('truetype');
+}
+
 .hero_1_title {
   @apply text-6xl font-normal text-balance;
-  font-family: 'RosindaleDisplayNarrow-Light';
+  font-family: 'RoslindaleDisplayCondensed-Light';
   text-align: center;
   font-size: 48px;
   line-height: 1.2;
@@ -61,10 +70,16 @@
 body, html {
   color: rgb(var(--foreground-rgb));
   margin: 0;
-  overflow-x: hidden;
   position: relative;
   text-rendering: geometricPrecision;
   background-color: #fafafa;
+}
+
+::selection {
+  background-color: greenyellow;
+}
+
+body {
 }
 
 @layer utilities {
@@ -74,12 +89,11 @@ body, html {
 }
 
 .main-text {
-  @apply text-2xl font-normal text-balance;
-  font-family: 'Haskoy-reg';
-  font-weight: 325;
-  font-size: 40px;
-  line-height: 1.62;
-  letter-spacing: -.7px;
+  @apply text-xl font-normal text-balance text-stone-800;
+  font-family: 'FamiljenGrotesk';
+  font-weight: 100;
+  font-size: 32px;
+  line-height: 1.4;
   font-feature-settings: "ordn" on;
 }
 
@@ -89,10 +103,3 @@ body, html {
   color: transparent;
 }
 
-.highlight {
-  @apply text-stone-700
-}
-
-span {
-  line-height: 1.4;
-}
