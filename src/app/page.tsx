@@ -44,18 +44,6 @@ export default function Home() {
           <source src="/images/reboot_reel.mp4" type="video/mp4" />
         </video>
         <img src="/images/lightning_alt.png" alt="hero_1" className=" w-24 inline mx-2 transform translate-y-[-5px]" />
-        <div className="text-stone-700 ">
-        I've been making digital surfaces 
-        <br />
-        <br />
-        Your growth metrics dictate our success, it's that simple.
-        <br />
-        <br />
-        We work on a subscription basis - $<span className="underline cursor-pointer">4400</span> per month
-        <br />
-        <br />
-        Pause or cancel anytime
-        </div>
         <PriceCard
           title="Subscription"
           price={4400}

@@ -24,7 +24,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ title, price, features }) => {
                 price-card
                 shadow-sm
                 rounded-[24px]
-                w-[325px]
+                w-[350px]
                 mb-10
                 ">
             <div className='text-[20px] font-medium text-[#0f0f0f]'>
@@ -76,7 +76,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ title, price, features }) => {
             </div>
             <div className='flex gap-[8px] items-center'>
                 <div className='text-[40px]  font-[Haskoy-semi] '>$3,400</div>
-                <div className='text-[14px] font-semibold text-[#AAAAAA]'>per month</div>
+                <div className='text-[14px] font-semibold text-[#afafaf]'>per month</div>
             </div>
             <div className=' my-3 h-1 w-full flex gap-[2px] justify-start'>
                 <div className='dot'></div>
@@ -120,9 +120,9 @@ const PriceCard: React.FC<PriceCardProps> = ({ title, price, features }) => {
                 <div className='dot'></div>
             </div>
             <div className='text-[20px] font-medium text-[#0f0f0f]'>
-                Included
+                Features
             </div>
-            <div className=' flex flex-col gap-3 text-[#666D7F] text-[Haskoy-med] text-[18px] mt-3'>
+            <div className=' flex flex-col gap-3 text-[#3d3d3d] text-[Haskoy-med] text-[20px] mt-3'>
                 <div className='flex'>
                     <div className='w-[32px] flex'>
                         <svg className="my-auto" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -170,19 +170,19 @@ const PriceCard: React.FC<PriceCardProps> = ({ title, price, features }) => {
                 </div>
                 </div>
 
-            <div className='flex gap-3 pt-10 pb-7  mx-auto'>
+            <div className='flex gap-3 pt-10 mx-auto'>
                 <div
                 style={{
                 }}
                 className='
                     relative 
                     text-stone-50 
-                    rounded-[24px]
+                    rounded-[12px]
                     flex
                     bg-[black]
                     flex-col
-                    w-[136px]
-                    h-[40px]
+                    w-full
+                    h-[52px]
                     text-center
                     justify-center
                     transition-width 
@@ -191,7 +191,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ title, price, features }) => {
                     cursor-pointer
                     transition-opacity 
                     text-nowrap
-                    text-[14px]
+                    text-[18px]
                     select-none
                     font-[Haskoy]
                     font-[550]
