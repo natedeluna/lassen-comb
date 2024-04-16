@@ -30,40 +30,22 @@ export default function Home() {
 
   return (
     <main className="relative flex min-h-screen flex-col items-center pt-[60px] max-w-[500px] mx-auto">
-      <video 
-        ref={videoRef}
-        src="/images/AdobeStock_528595728.mov"
-        className="fixed top-0 left-0 z-[0] opacity-40 w-full h-full object-fill"
-        autoPlay
-        muted 
-        loop
-      ></video>
       <Badge 
         texts={["Built to world standards", "Design subscription"]} 
         color="whitesmoke" />
       <SeparatorVerticalTopScrew className="transform rotate-180 opacity-75"/>
       <section className="relative z-10 hero_1_title max-w-3xl my-1 text-stone-800 flex flex-col gap-1 self-start w-full">
-        <div className=" w-fit h-[64px]">
-          <img src="/images/l_2.png" alt="hero_1" className=" h-[75px] inline mr-4 transform translate-y-[-5px]" />
-          Lassen comb
-        </div>
-        <div className="text-stone-400 w-fit h-[64px] self-center">
-          A <span className="rainbow-text">design supplier</span> based
-        </div>
-        <div className="w-fit h-[64px] self-end text-stone-400">
-          out of <span className="text-stone-800">Austin, TX</span>
-          <img src="/images/map.png" alt="hero_1" className=" h-[75px] inline ml-4 transform translate-y-[-5px]" />
-        </div>
+        Elevate your brand with world class design
       </section>
       <SeparatorVerticalTopScrew className="transform translate-y-[12px] rotate-0 opacity-75"/>
       <section className=" main-text w-[100%] relative">
         <br />
-        <video className="w-full h-fit-content rounded-xl border-stone-300 border-[.1px] shadow-sm bg-stone-50" autoPlay muted loop>
+        <video className="w-full h-fit-content rounded-xl border-stone-100 border-[.1px] shadow-sm bg-stone-50" autoPlay muted loop>
           <source src="/images/reboot_reel.mp4" type="video/mp4" />
         </video>
         <img src="/images/lightning_alt.png" alt="hero_1" className=" w-24 inline mx-2 transform translate-y-[-5px]" />
         <div className="text-stone-700 ">
-        Lassen comb focuses on crafting functional and compelling design to elevate your brand positioning and attract your ideal user. 
+        I've been making digital surfaces 
         <br />
         <br />
         Your growth metrics dictate our success, it's that simple.

@@ -12,6 +12,7 @@ const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
     const [index, setIndex] = useState(0);
     const [badgeWidth, setBadgeWidth] = useState(172);
     const previousIndex = index === 0 ? texts.length - 1 : index - 1;
+    const baseColor:string = "lime"
     
     
     useEffect(() => {
@@ -35,15 +36,15 @@ const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
     return (
         <motion.div style={{ 
             width: `${badgeWidth}px`,
-            boxShadow: `inset 0px -1.5px 0 1px #e7e5e4`,
+            boxShadow: `inset 0px -1.5px 0 1px #d9f99d`,
         }}
             onClick={() => changeBadgeText()}
             className='
                 relative 
                 flex 
                 flex-col 
-                bg-stone-50 
-                border-stone-300 
+                bg-lime-50
+                border-lime-300 
                 border-[.5px]
                 rounded-2xl
                 items-center 
@@ -63,7 +64,7 @@ const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
             <AnimatePresence mode='out-in'>
                 {texts.map ((text, i) => (
                     <motion.span 
-                        className='absolute text-stone-500 text-[13px] font-[555] transform translate-y-[-.5px]'
+                        className='absolute text-lime-700 text-[13px] font-[555] transform translate-y-[-.5px]'
                         key={text}
                         initial={{ opacity: 0}}
                         animate={{ opacity: i===index ? 1 : 0}}

@@ -8,10 +8,6 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-* {
-  -webkit-text-size-adjust: 100%
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -33,6 +29,11 @@
 @font-face {
   font-family: 'Haskoy-med';
   src: url('../../public/fonts/Haskoy-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Haskoy-semi';
+  src: url('../../public/fonts/Haskoy-SemiBold.woff2') format('woff2');
 }
 
 @font-face {
@@ -59,6 +60,11 @@
   src: url('../../public/fonts/FamiljenGrotesk-VariableFont_wght.ttf') format('truetype');
 }
 
+* {
+  -webkit-text-size-adjust: 100%;
+  font-family: haskoy-med
+}
+
 .hero_1_title {
   @apply text-6xl font-normal text-balance;
   font-family: 'RoslindaleDisplayCondensed-Light';
@@ -72,14 +78,11 @@ body, html {
   margin: 0;
   position: relative;
   text-rendering: geometricPrecision;
-  background-color: #fafafa;
+  background-color: rgb(251, 251, 253);
 }
 
 ::selection {
   background-color: greenyellow;
-}
-
-body {
 }
 
 @layer utilities {
@@ -90,6 +93,7 @@ body {
 
 .main-text {
   @apply text-xl font-normal text-balance text-stone-800;
+  /* font-family: 'Haskoy'; */
   font-family: 'FamiljenGrotesk';
   font-weight: 100;
   font-size: 32px;
@@ -101,5 +105,13 @@ body {
   background: linear-gradient(to right, #2e0f84 10%, #375dfb 20%, #f17b2c 30%, #f2ae40 50%, #df1c41 70%, #38c793 90%);
   -webkit-background-clip: text;
   color: transparent;
+}
+
+.dot {
+  position: relative;
+  background: rgb(226, 228, 244);
+  width: 4px;
+  height: 2px;
+  border-radius: 10px;
 }
 
