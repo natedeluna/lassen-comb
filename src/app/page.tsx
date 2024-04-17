@@ -39,7 +39,7 @@ export default function Home() {
       <Badge
         isMobile={isMobileDevice()}
         texts={["Built to world standards", "Design subscription"]} 
-        color="whitesmoke" />
+        />
       <SeparatorVerticalTopScrew className="transform rotate-180 opacity-75"/>
       <section className="relative z-10 hero_1_title max-w-3xl my-1 text-stone-800 flex flex-col gap-1 self-start w-full">
       <div className=" flex gap-2 top-0 self-center mt-3">
