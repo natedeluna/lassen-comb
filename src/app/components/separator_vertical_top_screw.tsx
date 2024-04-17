@@ -49,7 +49,7 @@ const SeparatorVerticalTopScrew: React.FC<SeparatorVerticalTopScrewProps> = ({ c
                         if (el instanceof SVGPathElement) {
                             let angleMatch = (el.style.getPropertyValue('transform').match(/\d+/))
                             let angle = angleMatch ? parseFloat(angleMatch[0]) : 0;
-                            let turnTo = angle + 22.5 < 360 ? angle + 22.5 : 0
+                            let turnTo = angle + 22.5 > 360 ? 0 : angle + 22.5
                             el.style.setProperty('transform', `rotate(${turnTo}deg)`)
                         }
                     })
