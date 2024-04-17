@@ -58,7 +58,7 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
                 flex 
                 flex-col 
                 ${isMobile? "bg-lime-100":"bg-lime-50"}
-                ${isMobile? "active:bg-lime-200":"active:bg-lime-100"}
+                ${isMobile? "active:bg-lime-100":"active:bg-lime-100"}
                 ${isMobile? "active:border-lime-500":"active:border-lime-400"}
                 ${isMobile? "border-lime-400":"border-lime-300"}
                 border-[.5px]

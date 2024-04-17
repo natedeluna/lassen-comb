@@ -38,7 +38,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative flex min-h-screen flex-col items-center pt-[60px] max-w-[500px] mx-auto">
+    <main className={`relative flex min-h-screen flex-col items-center ${isMobileDevice() ? "pt-[30px]" : "pt-[60px]"} max-w-[500px] mx-auto`}>
       <Badge
         isMobile={isMobileDevice()}
         texts={["Built to world standards", "Design subscription"]} 
