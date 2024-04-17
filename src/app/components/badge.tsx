@@ -80,7 +80,7 @@ const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
             layout
             transition={{ type: 'spring', stiffness: 800, damping: 35 }}
             >
-            <AnimatePresence mode='popLayout'>
+            <AnimatePresence >
                 {texts.map ((text, i) => (
                     <motion.span 
                         className='transition active:text-lime-900 absolute text-lime-700 text-[13px] font-[555] transform translate-y-[-.5px]'
