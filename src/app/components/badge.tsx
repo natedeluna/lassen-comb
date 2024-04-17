@@ -33,18 +33,34 @@ const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
         }
       };
 
+      const scrollToPriceCard = () => {
+        const priceCard = document.getElementById('price-card');
+        if (priceCard) {
+          const priceCardRect = priceCard.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const targetPosition = priceCardRect.top + scrollTop;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth',
+          });
+        }
+      };
+
     return (
         <motion.div style={{ 
             width: `${badgeWidth}px`,
             boxShadow: `inset 0px -1.5px 0 1px #d9f99d`,
+            transition: `background .4s ease-out, border .3s ease-out`
         }}
-            onClick={() => changeBadgeText()}
+            onClick={() => scrollToPriceCard()}
             className='
                 relative 
                 flex 
                 flex-col 
                 bg-lime-50
+                active:bg-lime-100
                 border-lime-300 
+                active:border-lime-400
                 border-[.5px]
                 rounded-2xl
                 items-center 
@@ -57,14 +73,17 @@ const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
                 duration-500 
                 ease-in-out
                 transition-opacity 
-                text-nowrap '
+                text-nowrap 
+                cursor-pointer
+                select-none
+                '
             layout
             transition={{ type: 'spring', stiffness: 800, damping: 35 }}
             >
-            <AnimatePresence mode='out-in'>
+            <AnimatePresence mode='popLayout'>
                 {texts.map ((text, i) => (
                     <motion.span 
-                        className='absolute text-lime-700 text-[13px] font-[555] transform translate-y-[-.5px]'
+                        className='transition active:text-lime-900 absolute text-lime-700 text-[13px] font-[555] transform translate-y-[-.5px]'
                         key={text}
                         initial={{ opacity: 0}}
                         animate={{ opacity: i===index ? 1 : 0}}
