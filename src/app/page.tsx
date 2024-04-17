@@ -11,8 +11,11 @@ export default function Home() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   function isMobileDevice() {
-      const mobileDeviceRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-      return mobileDeviceRegex.test(navigator.userAgent);
+    if (typeof window !== 'undefined' && typeof navigator !== 'undefined') {
+        const mobileDeviceRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+        return mobileDeviceRegex.test(navigator.userAgent);
+    }
+    return false
   }
 
   const handleScroll = () => {
