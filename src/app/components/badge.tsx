@@ -18,7 +18,7 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
     useEffect(() => {
         const interval = setInterval(() => {
             changeBadgeText()
-        }, 3000);
+        }, 7000);
         return () => clearInterval(interval);
     }, [index]);
 
@@ -60,7 +60,7 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
                 ${isMobile? "bg-lime-100":"bg-lime-50"}
                 ${isMobile? "active:bg-lime-200":"active:bg-lime-100"}
                 ${isMobile? "active:border-lime-500":"active:border-lime-400"}
-                ${isMobile? "border-lime-300":"border-lime-400"}
+                ${isMobile? "border-lime-400":"border-lime-300"}
                 border-[.5px]
                 rounded-2xl
                 items-center 

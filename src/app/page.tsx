@@ -50,9 +50,9 @@ export default function Home() {
         <span className="text-[20px] opacity-60">Lassen Comb</span>
       </div>
       {isMobileDevice() ? (
-        <>Elevate your brand with world class design</>
-      ):(
         <>Elevate <br /> your brand with <br /> world class design</>
+      ):(
+        <>Elevate your brand with world class design</>
       )}
       </section>
       <SeparatorVerticalTopScrew className="transform translate-y-[12px] rotate-0 opacity-75"/>
