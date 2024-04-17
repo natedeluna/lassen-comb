@@ -3,7 +3,7 @@ import Badge from "@/app/components/badge";
 import SeparatorVerticalTopScrew from "./components/separator_vertical_top_screw";
 import { useEffect, useState, useRef } from "react";
 import PriceCard from "@/app/components/price_card";
-import Logo from "@/app/components/Logo"
+import Logo from "@/app/components/logo"
 
 export default function Home() {
   const [highlightedWords, setHighlightedWords]:any = useState([]);
