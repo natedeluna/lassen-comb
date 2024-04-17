@@ -10,6 +10,11 @@ export default function Home() {
   const [prevWordIndex, setPrevWordIndex]:any = useState(0);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
+  function isMobileDevice() {
+      const mobileDeviceRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+      return mobileDeviceRegex.test(navigator.userAgent);
+  }
+
   const handleScroll = () => {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = document.documentElement.scrollTop;
@@ -31,7 +36,8 @@ export default function Home() {
 
   return (
     <main className="relative flex min-h-screen flex-col items-center pt-[60px] max-w-[500px] mx-auto">
-      <Badge 
+      <Badge
+        isMobile={isMobileDevice()}
         texts={["Built to world standards", "Design subscription"]} 
         color="whitesmoke" />
       <SeparatorVerticalTopScrew className="transform rotate-180 opacity-75"/>
@@ -40,7 +46,11 @@ export default function Home() {
         <Logo></Logo>
         <span className="text-[20px] opacity-60">Lassen Comb</span>
       </div>
-        Elevate your brand with world class design
+      {isMobileDevice() ? (
+        <>Elevate your brand with world class design</>
+      ):(
+        <>Elevate <br /> your brand with <br /> world class design</>
+      )}
       </section>
       <SeparatorVerticalTopScrew className="transform translate-y-[12px] rotate-0 opacity-75"/>
       <section className=" main-text w-[100%] relative">
@@ -50,6 +60,7 @@ export default function Home() {
         </video>
         <img src="/images/lightning_alt.png" alt="hero_1" className=" w-24 inline mx-2 transform translate-y-[-5px]" />
         <PriceCard
+          isMobile={isMobileDevice()}
           title="Subscription"
           price={4400}
           features={["start same day", "unlimited web, product, and brand design, one request "]}/>

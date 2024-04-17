@@ -1,32 +1,34 @@
 import React from 'react';
 
 interface PriceCardProps {
+    isMobile: boolean;
     title: string;
     price: number;
     features: string[];
 }
 
-const PriceCard: React.FC<PriceCardProps> = ({ title, price, features }) => {
+const PriceCard: React.FC<PriceCardProps> = ({isMobile, title, price, features }) => {
     return (
         <div
             id='price-card'
             style={{
                 background: "white",
             }}
-            className="
+            className={`
                 p-[16px]
                 left-[50%]
                 transform
                 translate-x-[-50%]
                 border-[.5px]
                 shadow-[0px 2px 6.8px rgba(45, 255, 41, 0.34)]
-                border-[#00000010]
+                border-[#00000020]
                 relative
                 shadow-sm
                 rounded-2xl
                 w-[350px]
                 mb-10
-                ">
+            `}
+            >
             <div className='flex flex-col gap-7'>
                 <svg className='absolute left-1/2 top-0 transform translate-x-[-50%] scale-50' width="133" height="45" viewBox="0 0 133 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M117.922 14.3448C126.25 14.3448 133 21.0953 133 29.4224V29.4224C133 37.7495 126.25 44.5 117.922 44.5H15.0776C6.75047 44.5 0 37.7495 0 29.4224V29.4224C0 21.0953 6.75046 14.3448 15.0776 14.3448H30.4782C37.5607 14.3448 44.4074 11.7993 49.7698 7.17241L51.7091 5.49911C55.8204 1.95166 61.0698 0 66.5 0V0V0C72.4733 0 78.2476 2.14682 82.77 6.04902L84.072 7.17241C89.4343 11.7993 96.281 14.3448 103.364 14.3448H117.922Z" fill="#FBFBFD"/>

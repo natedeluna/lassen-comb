@@ -4,11 +4,11 @@ import React, { useState, useEffect} from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 interface BadgeProps {
+    isMobile: boolean;
     texts: string[];
-    color: string;
 }
 
-const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
+const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
     const [index, setIndex] = useState(0);
     const [badgeWidth, setBadgeWidth] = useState(172);
     const previousIndex = index === 0 ? texts.length - 1 : index - 1;
@@ -18,7 +18,7 @@ const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
     useEffect(() => {
         const interval = setInterval(() => {
             changeBadgeText()
-        }, 12000);
+        }, 3000);
         return () => clearInterval(interval);
     }, [index]);
 
@@ -53,14 +53,14 @@ const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
             transition: `background .4s ease-out, border .3s ease-out`
         }}
             onClick={() => scrollToPriceCard()}
-            className='
+            className={`
                 relative 
                 flex 
                 flex-col 
-                bg-lime-50
-                active:bg-lime-100
-                border-lime-300 
-                active:border-lime-400
+                ${isMobile? "bg-lime-100":"bg-lime-50"}
+                ${isMobile? "active:bg-lime-200":"active:bg-lime-100"}
+                ${isMobile? "active:border-lime-500":"active:border-lime-400"}
+                ${isMobile? "border-lime-300":"border-lime-400"}
                 border-[.5px]
                 rounded-2xl
                 items-center 
@@ -76,9 +76,9 @@ const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
                 text-nowrap 
                 cursor-pointer
                 select-none
-                '
+                `}
             layout
-            transition={{ type: 'spring', stiffness: 800, damping: 35 }}
+            transition={{ type: 'spring', stiffness: 900, damping: 25 }}
             >
             <AnimatePresence >
                 {texts.map ((text, i) => (
@@ -88,7 +88,7 @@ const Badge: React.FC<BadgeProps> = ({ texts, color }) => {
                         initial={{ opacity: 0}}
                         animate={{ opacity: i===index ? 1 : 0}}
                         exit={{ opacity: 0, }}
-                        transition={{stiffness: 800, damping: 30, delay: i === index ? 0.25 : 0}}
+                        transition={{stiffness: 800, damping: 30, delay: i === index ? 0.28 : 0}}
                     >
                             {text}
                     </motion.span>
