@@ -23,13 +23,23 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
     }, [index]);
 
     const changeBadgeText = () => {
-        setIndex((prevIndex) => (prevIndex + 1) % texts.length);
+        // Granular approach since framer motion is finnicky on mobile
         const measureSpan = document.getElementById('measure');
-        if (measureSpan) {
-            const width:any = parseFloat(window.getComputedStyle(measureSpan).width);
+        const opacityTransitionPromise = new Promise<void>((resolve) => {
             setTimeout(() => {
+                resolve();
+            }, 320)
+        })
+        if (measureSpan) {
+            measureSpan.style.opacity = '0';
+            setIndex((prevIndex) => (prevIndex + 1) % texts.length);
+            measureSpan.textContent = texts[previousIndex]
+
+            opacityTransitionPromise.then(() => {
+                const width:any = parseFloat(window.getComputedStyle(measureSpan).width);
                 setBadgeWidth(width+24);
-            }, 250);
+                measureSpan.style.opacity = '1'
+            })
         }
       };
 
@@ -59,7 +69,7 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
                 flex-col 
                 ${isMobile? "bg-lime-100":"bg-lime-50"}
                 ${isMobile? "active:bg-lime-100":"active:bg-lime-100"}
-                ${isMobile? "active:border-lime-500":"active:border-lime-400"}
+                ${isMobile? "active:border-lime-600":"active:border-lime-400"}
                 ${isMobile? "border-lime-400":"border-lime-300"}
                 border-[.5px]
                 rounded-2xl
@@ -94,8 +104,8 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
                     </motion.span>
                 ))}
             </AnimatePresence>
-            <span id="measure" style={{visibility: 'hidden', whiteSpace: 'pre', fontFamily: 'Haskoy', fontSize: '14px'}}>
-                {texts[previousIndex]}
+            <span id="measure" style={{visibility: 'hidden', whiteSpace: 'pre', fontFamily: 'Haskoy', fontSize: '14px', transition: 'opacity .3s ease-out'}}>
+                {texts[0]}
             </span>
         </motion.div>
     );
