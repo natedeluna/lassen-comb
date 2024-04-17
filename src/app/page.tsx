@@ -18,23 +18,47 @@ export default function Home() {
     return false
   }
 
-  const handleScroll = () => {
-    const scrollHeight = document.documentElement.scrollHeight;
-    const scrollTop = document.documentElement.scrollTop;
-  };
+  const fadeInLogo = () => {
+    let logoImg = document.querySelector('.logo-img-fade-in')
+    let logoText = document.querySelector('#logo-text-fade-in')
+    if (logoImg instanceof SVGElement) {
+      logoImg.style.scale = '130%'
+      logoImg.style.opacity = '100%'
+    }
+    const logoImgFadeInPromise = new Promise<void>((resolve) => {
+      setTimeout(() => {
+          resolve()
+      }, 2250)
+    })
+    logoImgFadeInPromise.then(() => {
+      if (logoText instanceof HTMLElement && logoImg instanceof SVGElement) {
+        let text = logoText.innerText
+        logoText.innerText = ""
+        Array.from(text.split("")).forEach((letter, index) => {
+          let div = document.createElement('div')
+          if (letter !== " ") {
+            div.innerText = letter
+            // for tight animation timing
+            div.classList.add('fadeInLetter')
+            div.style.animationDelay = `${index * 0.03}s`;
+            div.style.animationDuration = `${.8 - (index * 0.02)}s`;
+          } else {
+            div.innerText = `\u200a`+ `\u200a`
+          }
+  
+          logoText.appendChild(div)
+        })
+        logoText.style.width = "120px"
+      }
+    })
+  }
 
   useEffect(() => {
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
+    fadeInLogo()
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.5;
     }
+
   }, []);
 
   return (
@@ -45,12 +69,28 @@ export default function Home() {
         />
       <SeparatorVerticalTopScrew className="transform rotate-180 opacity-75"/>
       <section className="relative z-10 hero_1_title max-w-3xl my-1 text-stone-800 flex flex-col gap-1 self-start w-full">
-      <div className=" flex gap-2 top-0 self-center mt-3">
-        <Logo></Logo>
-        <span className="text-[20px] opacity-60">Lassen Comb</span>
+      <div className="mt-2 relative flex items-center top-0 self-center">
+        <Logo className="inline-block logo-img-fade-in mr-2 opacity-0 duration-[1s] scale-[80%] transition-all ease" />
+        <div
+          id="logo-text-fade-in"
+          className={`
+          relative
+            transition-width
+            duration-[1.8s]
+            ease-out
+            h-fit
+            w-0
+            whitespace-nowrap
+            text-[20px] 
+            text-transparent
+            `}>Lassen Comb</div>
       </div>
       {isMobileDevice() ? (
-        <>Elevate <br /> your brand with <br /> world class design</>
+        <>
+          Elevate your<br />
+          brand with <br /> 
+          world class design
+        </>
       ):(
         <>Elevate your brand with world class design</>
       )}
