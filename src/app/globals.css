@@ -127,12 +127,23 @@ body, html {
 .fadeInLetter {
   position: relative;
   display: inline-block;
-  color: #00000060;
   white-space: pre;
   scale: 1.2;
+  color: black;
   filter:blur(1.3px);
   transform: translate(2px, 0px);
   opacity: 0;
   animation: fadeInLetterAnimation 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes fadeInAll {
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  animation: fadeInAll 2s ease-out forwards;
 }
 
