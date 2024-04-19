@@ -80,7 +80,7 @@ export default function Home() {
               transformOrigin: "top left",
               margin: "auto 0px",
             }} 
-            id="canvas1" willreadfrequently={"true"}>
+            id="canvas1">
           </canvas>
           <Script src="/scripts/raw_particle.js"/>
         </div>
