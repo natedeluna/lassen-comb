@@ -59,6 +59,7 @@ export default function Home() {
       </section>
       <SeparatorVerticalTopScrew className="transform translate-y-[12px] rotate-0 opacity-75"/>
       <section className=" main-text w-[100%] relative">
+
         <br />
         <br />
         <br />

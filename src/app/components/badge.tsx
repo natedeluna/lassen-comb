@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useEffect} from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface BadgeProps {
     isMobile: boolean;
@@ -12,13 +12,11 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
     const [index, setIndex] = useState(0);
     const [badgeWidth, setBadgeWidth] = useState(172);
     const previousIndex = index === 0 ? texts.length - 1 : index - 1;
-    const baseColor:string = "lime"
-    
     
     useEffect(() => {
         const interval = setInterval(() => {
             changeBadgeText()
-        }, 7000);
+        }, 6000);
         return () => clearInterval(interval);
     }, [index]);
 
@@ -28,13 +26,13 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
         const opacityTransitionPromise = new Promise<void>((resolve) => {
             setTimeout(() => {
                 resolve();
-            }, 320)
+            }, 300)
         })
 
         const textSwapPromise = new Promise<void>((resolve) => {
             setTimeout(() => {
                 resolve()
-            }, 44)
+            }, 350)
         })
 
         if (measureSpan) {
@@ -69,7 +67,7 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
         <div className='relative w-fit h-fit'>
             <motion.div style={{ 
                 width: `${badgeWidth}px`,
-                boxShadow: `inset 0px -1.5px 0 1px #d9f99d`,
+                boxShadow: `inset 0px -1.5px 0 1px #f0abfc66`,
                 transition: `background .4s ease-out, border .3s ease-out`
             }}
                 onClick={() => scrollToPriceCard()}
@@ -77,10 +75,10 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
                     relative 
                     flex 
                     flex-col 
-                    ${isMobile? "bg-lime-100":"bg-lime-50"}
-                    ${isMobile? "active:bg-lime-100":"active:bg-lime-100"}
-                    ${isMobile? "active:border-lime-600":"active:border-lime-400"}
-                    ${isMobile? "border-lime-400":"border-lime-300"}
+                    ${isMobile? "bg-fuchsia-100":"bg-fuchsia-50"}
+                    ${isMobile? "active:bg-fuchsia-100":"active:bg-fuchsia-100"}
+                    ${isMobile? "active:border-fuchsia-600":"active:border-fuchsia-400"}
+                    ${isMobile? "border-fuchsia-400":"border-fuchsia-200"}
                     border-[.5px]
                     rounded-2xl
                     items-center 
@@ -98,11 +96,11 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
                     select-none
                     `}
                 layout
-                transition={{ type: 'spring', stiffness: 900, damping: 25 }}
+                transition={{ type: 'spring', stiffness: 900, damping: 23 }}
                 >
             </motion.div>
             <div id="measure" 
-                    className='text-lime-700 pointer-events-none'
+                    className='text-fuchsia-800 pointer-events-none'
                     style={{
                         position: 'absolute',
                         top:'50%',

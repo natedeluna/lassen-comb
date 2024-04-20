@@ -81,6 +81,11 @@ body, html {
   background-color: rgb(251, 251, 253);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+
 ::selection {
   background-color: greenyellow;
 }
