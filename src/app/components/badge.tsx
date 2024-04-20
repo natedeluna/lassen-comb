@@ -67,7 +67,7 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
         <div className='relative w-fit h-fit'>
             <motion.div style={{ 
                 width: `${badgeWidth}px`,
-                boxShadow: `inset 0px -1.5px 0 1px #f0abfc66`,
+                boxShadow: `inset 0px -1.6px 0 1px #f0abfc66`,
                 transition: `background .4s ease-out, border .3s ease-out`
             }}
                 onClick={() => scrollToPriceCard()}

@@ -1,13 +1,10 @@
 import React from 'react';
 
 interface PriceCardProps {
-    isMobile: boolean;
-    title: string;
-    price: number;
-    features: string[];
+    className?: string;
 }
 
-const PriceCard: React.FC<PriceCardProps> = ({isMobile, title, price, features }) => {
+const PriceCard: React.FC<PriceCardProps> = ({className}) => {
     return (
         <div
             id='price-card'
@@ -15,6 +12,7 @@ const PriceCard: React.FC<PriceCardProps> = ({isMobile, title, price, features }
                 background: "white",
             }}
             className={`
+                ${className}
                 p-[16px]
                 left-[50%]
                 transform
@@ -141,7 +139,7 @@ const PriceCard: React.FC<PriceCardProps> = ({isMobile, title, price, features }
                     <div className='flex'>
                         <div className='w-[32px] flex'>
                             <svg className="my-auto" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0Z" fill="#00FF1A" fillOpacity="0.2"/>
+                            <path fillRule="evenodd" clipRule="evenodd" d="M9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0Z" fill="#f700ff" fillOpacity="0.2"/>
                             <path fillRule="evenodd" clipRule="evenodd" d="M12.145 7.44504C12.4364 7.08884 12.3839 6.56382 12.0277 6.27238C11.6715 5.98094 11.1465 6.03344 10.855 6.38964L7.68814 10.2603L6.67259 9.2448C6.34715 8.91932 5.81951 8.91932 5.49408 9.2448C5.16864 9.5702 5.16864 10.0978 5.49408 10.4233L7.16074 12.0899C7.32723 12.2564 7.55636 12.3447 7.79151 12.333C8.02666 12.3212 8.24587 12.2106 8.39496 12.0284L12.145 7.44504Z" fill="#131313"/>
                             </svg>
                         </div>
@@ -150,7 +148,7 @@ const PriceCard: React.FC<PriceCardProps> = ({isMobile, title, price, features }
                     <div className='flex'>
                         <div className='w-[32px] flex'>
                             <svg className="my-auto" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0Z" fill="#00FF1A" fillOpacity="0.2"/>
+                            <path fillRule="evenodd" clipRule="evenodd" d="M9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0Z" fill="#f700ff" fillOpacity="0.2"/>
                             <path fillRule="evenodd" clipRule="evenodd" d="M12.145 7.44504C12.4364 7.08884 12.3839 6.56382 12.0277 6.27238C11.6715 5.98094 11.1465 6.03344 10.855 6.38964L7.68814 10.2603L6.67259 9.2448C6.34715 8.91932 5.81951 8.91932 5.49408 9.2448C5.16864 9.5702 5.16864 10.0978 5.49408 10.4233L7.16074 12.0899C7.32723 12.2564 7.55636 12.3447 7.79151 12.333C8.02666 12.3212 8.24587 12.2106 8.39496 12.0284L12.145 7.44504Z" fill="#131313"/>
                             </svg>
                         </div>
@@ -159,7 +157,7 @@ const PriceCard: React.FC<PriceCardProps> = ({isMobile, title, price, features }
                     <div className='flex'>
                         <div className='w-[32px] flex'>
                             <svg className="my-auto" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0Z" fill="#00FF1A" fillOpacity="0.2"/>
+                            <path fillRule="evenodd" clipRule="evenodd" d="M9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0Z" fill="#f700ff" fillOpacity="0.2"/>
                             <path fillRule="evenodd" clipRule="evenodd" d="M12.145 7.44504C12.4364 7.08884 12.3839 6.56382 12.0277 6.27238C11.6715 5.98094 11.1465 6.03344 10.855 6.38964L7.68814 10.2603L6.67259 9.2448C6.34715 8.91932 5.81951 8.91932 5.49408 9.2448C5.16864 9.5702 5.16864 10.0978 5.49408 10.4233L7.16074 12.0899C7.32723 12.2564 7.55636 12.3447 7.79151 12.333C8.02666 12.3212 8.24587 12.2106 8.39496 12.0284L12.145 7.44504Z" fill="#131313"/>
                             </svg>
                         </div>
@@ -168,7 +166,7 @@ const PriceCard: React.FC<PriceCardProps> = ({isMobile, title, price, features }
                     <div className='flex'>
                         <div className='w-[32px] flex'>
                             <svg className="my-auto" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0Z" fill="#00FF1A" fillOpacity="0.2"/>
+                            <path fillRule="evenodd" clipRule="evenodd" d="M9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0Z" fill="#f700ff" fillOpacity="0.2"/>
                             <path fillRule="evenodd" clipRule="evenodd" d="M12.145 7.44504C12.4364 7.08884 12.3839 6.56382 12.0277 6.27238C11.6715 5.98094 11.1465 6.03344 10.855 6.38964L7.68814 10.2603L6.67259 9.2448C6.34715 8.91932 5.81951 8.91932 5.49408 9.2448C5.16864 9.5702 5.16864 10.0978 5.49408 10.4233L7.16074 12.0899C7.32723 12.2564 7.55636 12.3447 7.79151 12.333C8.02666 12.3212 8.24587 12.2106 8.39496 12.0284L12.145 7.44504Z" fill="#131313"/>
                             </svg>
                         </div>
@@ -177,7 +175,7 @@ const PriceCard: React.FC<PriceCardProps> = ({isMobile, title, price, features }
                     <div className='flex'>
                         <div className='w-[32px] flex'>
                             <svg className="my-auto" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0Z" fill="#00FF1A" fillOpacity="0.2"/>
+                            <path fillRule="evenodd" clipRule="evenodd" d="M9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0Z" fill="#f700ff" fillOpacity="0.2"/>
                             <path fillRule="evenodd" clipRule="evenodd" d="M12.145 7.44504C12.4364 7.08884 12.3839 6.56382 12.0277 6.27238C11.6715 5.98094 11.1465 6.03344 10.855 6.38964L7.68814 10.2603L6.67259 9.2448C6.34715 8.91932 5.81951 8.91932 5.49408 9.2448C5.16864 9.5702 5.16864 10.0978 5.49408 10.4233L7.16074 12.0899C7.32723 12.2564 7.55636 12.3447 7.79151 12.333C8.02666 12.3212 8.24587 12.2106 8.39496 12.0284L12.145 7.44504Z" fill="#131313"/>
                             </svg>
                         </div>

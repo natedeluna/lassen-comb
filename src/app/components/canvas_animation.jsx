@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 const CanvasAnimation = () => {
   const canvasRef = useRef(null);
+  const animationFrameRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -129,13 +130,25 @@ const CanvasAnimation = () => {
 
     const animate = () => {
       effect.render();
-      requestAnimationFrame(animate);
+      animationFrameRef.current = requestAnimationFrame(animate);
     };
 
-    animate();
+    const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            animationFrameRef.current = requestAnimationFrame(animate);
+          } else {
+            cancelAnimationFrame(animationFrameRef.current);
+          }
+        },
+        { threshold: 0.1 }
+      );
+  
+      observer.observe(canvas);
 
     return () => {
-      // Cleanup code if necessary
+        observer.unobserve(canvas);
+        cancelAnimationFrame(animationFrameRef.current);
     };
   }, []);
 

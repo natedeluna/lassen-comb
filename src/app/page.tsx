@@ -58,11 +58,7 @@ export default function Home() {
 
         <img src="/images/lightning_alt.png" alt="hero_1" className=" w-24 inline mx-2 transform translate-y-[-5px]" />
 
-        <PriceCard
-          isMobile={isMobileDevice()}
-          title="Subscription"
-          price={4400}
-          features={["start same day", "unlimited web, product, and brand design, one request "]}/>
+        <PriceCard/>
       </section>
     </main>
   );
