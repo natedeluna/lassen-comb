@@ -4,6 +4,7 @@ import SeparatorVerticalTopScrew from "./components/separator_vertical_top_screw
 import { useEffect, useState, useRef } from "react";
 import PriceCard from "@/app/components/price_card";
 import Script from "next/script";
+import  CanvasAnimation from "@/app/components/canvas_animation";
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -38,18 +39,7 @@ export default function Home() {
               height: 600*canvasScale,
             }}
             className= {`relative self-center  fadeIn`}  >
-            <canvas 
-              style={{
-                scale: .15,
-                position: "absolute",
-                top: "0px",
-                left: "0px",
-                transformOrigin: "top left",
-                margin: "auto 0px",
-              }} 
-              id="canvas1">
-            </canvas>
-            <Script src="/scripts/raw_particle.js"/>
+              <CanvasAnimation />
           </div>
         </div>
         <div className="inline hero_1_title">

@@ -78,7 +78,7 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
                     ${isMobile? "bg-fuchsia-100":"bg-fuchsia-50"}
                     ${isMobile? "active:bg-fuchsia-100":"active:bg-fuchsia-100"}
                     ${isMobile? "active:border-fuchsia-600":"active:border-fuchsia-400"}
-                    ${isMobile? "border-fuchsia-400":"border-fuchsia-200"}
+                    ${isMobile? "border-fuchsia-500":"border-fuchsia-200"}
                     border-[.5px]
                     rounded-2xl
                     items-center 
@@ -100,7 +100,7 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
                 >
             </motion.div>
             <div id="measure" 
-                    className='text-fuchsia-700 pointer-events-none'
+                    className='text-fuchsia-600 pointer-events-none'
                     style={{
                         position: 'absolute',
                         top:'50%',
