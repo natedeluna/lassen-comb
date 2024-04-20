@@ -10,7 +10,7 @@ interface BadgeProps {
 
 const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
     const [index, setIndex] = useState(0);
-    const [badgeWidth, setBadgeWidth] = useState(172);
+    const [badgeWidth, setBadgeWidth] = useState(148);
     const previousIndex = index === 0 ? texts.length - 1 : index - 1;
     
     useEffect(() => {
@@ -42,7 +42,7 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
                 setIndex((prevIndex) => (prevIndex + 1) % texts.length);
                 measureSpan.textContent = texts[previousIndex]
                 const width:any = parseFloat(window.getComputedStyle(measureSpan).width);
-                setBadgeWidth(width+24);
+                setBadgeWidth(width+28);
                 textSwapPromise.then(() => {
                     measureSpan.style.opacity = '1'
                 })
@@ -100,7 +100,7 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
                 >
             </motion.div>
             <div id="measure" 
-                    className='text-fuchsia-800 pointer-events-none'
+                    className='text-fuchsia-700 pointer-events-none'
                     style={{
                         position: 'absolute',
                         top:'50%',

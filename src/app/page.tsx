@@ -27,7 +27,7 @@ export default function Home() {
     <main className={`relative flex min-h-screen flex-col items-center ${isMobileDevice() ? "pt-[30px]" : "pt-[60px]"} max-w-[500px] mx-auto`}>
       <Badge
         isMobile={isMobileDevice()}
-        texts={["Built to world standards", "Design subscription"]} 
+        texts={["Design subscription", "Built to world standards"]} 
         />
       <SeparatorVerticalTopScrew className="transform rotate-180 opacity-75"/>
       <section className="relative z-10 hero_1_title max-w-3xl mb-5 text-stone-800 flex flex-col self-start w-full">
