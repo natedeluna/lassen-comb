@@ -152,8 +152,8 @@ const CanvasAnimation = () => {
     };
   }, []);
   return (
-    <div className="mt-2 relative flex items-center top-0 self-center">
-        <div style={{ width: 500*canvasScale, height: 600*canvasScale,  }}  className= {`relative self-center  fadeIn`}  >
+    <div className="mt-2 relative self-center">
+        <div style={{ width: 500*canvasScale, height: 600*canvasScale,  }}  className= {`relative  fadeIn`}  >
             <canvas
             ref={canvasRef}
             style={{

@@ -23,12 +23,12 @@ const BodyScrollFade = ({ text }) => {
   }, [controls]);
 
   const heroLineVariants = {
-    hidden: { opacity: 0, y: -10 },
+    hidden: { opacity: 0, y: -20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.1,
+        duration: 0.6,
         ease: 'easeOut',
       },
     },
