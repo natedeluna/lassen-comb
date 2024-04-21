@@ -2,8 +2,7 @@ import { motion } from 'framer-motion';
 
 
 const HeroFadeIn = () => {
-    const shiftOrder = window.innerWidth < 500 ? 0 : 1
-    const isMobile = window.innerWidth < 50
+    
     const heroLineVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: (i) => ({
