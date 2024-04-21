@@ -3,13 +3,13 @@ import React, { useEffect, useRef } from 'react';
 const CanvasAnimation = () => {
   const canvasRef = useRef(null);
   const animationFrameRef = useRef(null);
+  const canvasScale = 0.15;
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     canvas.width = 500;
     canvas.height = 600;
-    const canvasScale = 0.15;
 
     const svg = `
     <svg width="175" height="348" viewBox="0 0 175 348" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -151,19 +151,22 @@ const CanvasAnimation = () => {
         cancelAnimationFrame(animationFrameRef.current);
     };
   }, []);
-
   return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        scale: 0.15,
-        position: 'absolute',
-        top: '0px',
-        left: '0px',
-        transformOrigin: 'top left',
-        margin: 'auto 0px',
-      }}
-    />
+    <div className="mt-2 relative flex items-center top-0 self-center">
+        <div style={{ width: 500*canvasScale, height: 600*canvasScale,  }}  className= {`relative self-center  fadeIn`}  >
+            <canvas
+            ref={canvasRef}
+            style={{
+                scale: 0.15,
+                position: 'absolute',
+                top: '0px',
+                left: '0px',
+                transformOrigin: 'top left',
+                margin: 'auto 0px',
+            }}
+            />
+        </div>
+    </div>
   );
 };
 
