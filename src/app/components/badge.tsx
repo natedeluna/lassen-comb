@@ -5,20 +5,25 @@ import { motion } from 'framer-motion';
 
 interface BadgeProps {
     isMobile: boolean;
+    initialWidth: number;
     texts: string[];
+    className?: string;
 }
 
-const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
+const Badge: React.FC<BadgeProps> = ({ isMobile, initialWidth, texts, className }) => {
     const [index, setIndex] = useState(0);
-    const [badgeWidth, setBadgeWidth] = useState(148);
+    const [badgeWidth, setBadgeWidth] = useState(initialWidth);
     const previousIndex = index === 0 ? texts.length - 1 : index - 1;
     
-    useEffect(() => {
-        const interval = setInterval(() => {
-            changeBadgeText()
-        }, 6000);
-        return () => clearInterval(interval);
-    }, [index]);
+
+    if (texts.length > 1) {
+        useEffect(() => {
+            const interval = setInterval(() => {
+                changeBadgeText()
+            }, 6000);
+            return () => clearInterval(interval);
+        }, [index]);
+    }
 
     const changeBadgeText = () => {
         // Granular approach since framer motion is finnicky on mobile
@@ -64,7 +69,7 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts }) => {
       };
 
     return (
-        <div className='relative w-fit h-fit'>
+        <div className={`relative w-fit h-fit ${className}`}>
             <motion.div style={{ 
                 width: `${badgeWidth}px`,
                 boxShadow: `#e9d5ff 0px -1.6px 0px 1px inset`,

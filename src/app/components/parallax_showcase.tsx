@@ -46,9 +46,9 @@ const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ className }) => {
     <div
       ref={showcaseRef}
       style={{ width: windowWidth, transform: 'translateX(-50%)', left: '50%' }}
-      className={`fullWidthOverride relative ${className} h-[1000px] flex gap-8 justify-center items-center`}
+      className={`fullWidthOverride relative ${className} h-[1000px] flex gap-2 justify-center items-center px-2`}
     >
-      <div className="left-column flex flex-col gap-4 flex-1">
+      <div className="left-column flex flex-col gap-2 flex-1">
         <div className="card h-fit rounded-3xl overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300">
             <Image src={'/images/concept1.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
         </div>
@@ -59,10 +59,12 @@ const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ className }) => {
             <Image src={'/images/logo_consulting.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
         </div>
       </div>
-      <div className="right-column flex flex-col gap-4 mt-12 flex-1">
+      <div className="right-column flex flex-col gap-2 mt-12 flex-1">
         <div className="card h-fit rounded-3xl overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300"></div>
         <div className="card h-fit rounded-3xl overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300">
-          <video src="/images/Parchment - 22 April 2024.mp4" autoPlay loop muted></video>
+          <video src="/images/Parchment - 22 April 2024.mp4" autoPlay loop muted playsInline
+            style={{pointerEvents: 'none', touchAction:'none'}}
+          ></video>
         </div>
       </div>
     </div>

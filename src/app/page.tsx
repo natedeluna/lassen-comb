@@ -24,6 +24,7 @@ export default function Home() {
       {/* <BlurBar/> */}
       <Badge
         isMobile={isMobileDevice()}
+        initialWidth={148}
         texts={["Design subscription", "Built to world standards"]} 
         />
 
@@ -44,6 +45,15 @@ export default function Home() {
         <BodyScrollFade
           text={"We partner with marketing agencies, startups, and venture capital firms " +
           "to deliver powerful visual messages"}/>
+
+
+        <Badge
+          isMobile={isMobileDevice()}
+          texts={["Recent work"]}
+          initialWidth={100}
+          className="mx-auto mt-24"
+        />
+        <SeparatorVerticalTopScrew addScrews={['top']} className="transform translate-y-[12px] rotate-0 opacity-75"/>
 
         <ParallaxShowcase/>
 
