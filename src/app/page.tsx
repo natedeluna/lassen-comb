@@ -25,18 +25,15 @@ export default function Home() {
       <Badge
         isMobile={isMobileDevice()}
         initialWidth={148}
-        texts={["Design subscription", "Built to world standards"]} 
+        texts={["Design subscription", "Built to world standards"]}
+        className=""
         />
-
       <SeparatorVerticalTopScrew addScrews={['bottom']} className="transform rotate-180 opacity-75"/>
-
       <section className="relative z-10 hero_1_title max-w-3xl mb-5 text-stone-800 flex flex-col self-start w-full">
         <CanvasAnimation />
         <HeroFadeIn/>
       </section>
-      
       <SeparatorVerticalTopScrew addScrews={['top','bottom']} className="transform translate-y-[12px] rotate-0 opacity-75"/>
-      
       <section className=" main-text w-[100%] relative">
         <br />
         <BodyScrollFade
@@ -45,8 +42,6 @@ export default function Home() {
         <BodyScrollFade
           text={"We partner with marketing agencies, startups, and venture capital firms " +
           "to deliver powerful visual messages"}/>
-
-
         <Badge
           isMobile={isMobileDevice()}
           texts={["Recent work"]}
@@ -54,11 +49,7 @@ export default function Home() {
           className="mx-auto mt-24"
         />
         <SeparatorVerticalTopScrew addScrews={['top']} className="transform translate-y-[12px] rotate-0 opacity-75"/>
-
-        <ParallaxShowcase/>
-
-        <img src="/images/lightning_alt.png" alt="hero_1" className=" w-24 inline mx-2 transform translate-y-[-5px]" />
-
+        <ParallaxShowcase className="mt-[10vw]"/>
         <PriceCard/>
       </section>
     </main>

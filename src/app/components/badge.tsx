@@ -14,7 +14,6 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, initialWidth, texts, className 
     const [index, setIndex] = useState(0);
     const [badgeWidth, setBadgeWidth] = useState(initialWidth);
     const previousIndex = index === 0 ? texts.length - 1 : index - 1;
-    
 
     if (texts.length > 1) {
         useEffect(() => {
@@ -26,6 +25,8 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, initialWidth, texts, className 
     }
 
     const changeBadgeText = () => {
+        if (!texts.includes('Design subscription')) return
+
         // Granular approach since framer motion is finnicky on mobile
         const measureSpan = document.getElementById('measure');
         const opacityTransitionPromise = new Promise<void>((resolve) => {
@@ -108,9 +109,13 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, initialWidth, texts, className 
                     className='text-fuchsia-600 pointer-events-none'
                     style={{
                         position: 'absolute',
-                        top:'50%',
-                        left: '50%',
-                        transform: 'translate(-50%, -52%)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        top: '-1px',
+                        
+                        height: '100%',
+                        width: '100%',
                         whiteSpace: 'pre', 
                         fontFamily: 'Haskoy-med', 
                         fontSize: '14px', 
