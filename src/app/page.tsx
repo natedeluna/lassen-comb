@@ -1,11 +1,11 @@
 "use client"
+import BlurBar from "@/app/components/blur"
 import Badge from "@/app/components/badge";
 import SeparatorVerticalTopScrew from "./components/separator_vertical_top_screw";
 import PriceCard from "@/app/components/price_card";
 import  CanvasAnimation from "@/app/components/canvas_animation";
 import ParallaxShowcase from "./components/parallax_showcase";
 import HeroFadeIn from "@/app/components/hero_fade_in"
-import BodyScollFade from "@/app/components/body_scroll_fade"
 import BodyScrollFade from "@/app/components/body_scroll_fade";
 
 export default function Home() {
@@ -21,6 +21,7 @@ export default function Home() {
 
   return (
     <main className={`relative flex min-h-screen flex-col items-center ${isMobileDevice() ? "pt-[30px]" : "pt-[60px]"} max-w-[500px] > :not(.fullWidthOverride) mx-auto`}>
+      {/* <BlurBar/> */}
       <Badge
         isMobile={isMobileDevice()}
         texts={["Design subscription", "Built to world standards"]} 

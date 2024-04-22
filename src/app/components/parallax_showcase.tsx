@@ -24,7 +24,7 @@ const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ className }) => {
         const cards = showcaseRef.current.querySelectorAll('.card');
 
         cards.forEach((card, index) => {
-          const parallaxEffect = (scrollPosition - showcaseRef.current!.offsetTop) * (0.1 * (index + 1));
+          const parallaxEffect = (scrollPosition - showcaseRef.current!.offsetTop) * (0.01 * (index + 1));
           card.setAttribute('style', `transform: translateY(${parallaxEffect}px)`);
           if (index == 3) {
               console.log(parallaxEffect)
@@ -42,19 +42,18 @@ const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ className }) => {
   }, []);
 
   return (
-    <div
-      ref={showcaseRef}
-      style={{ width: windowWidth, transform: 'translateX(-50%)', left: '50%' }}
-      className={`fullWidthOverride relative ${className} h-[800px] flex gap-1 justify-center items-center`}
-    >
-      {[1, 2, 3, 4].map((index) => (
-        <div
-          key={index}
-          className="card w-[400px] h-[200px]  bg-white shadow-lg rounded-lg flex justify-center items-center text-2xl font-bold"
-        >
-          Card {index}
+    <div ref={showcaseRef} style={{ width: windowWidth, transform: 'translateX(-50%)', left: '50%' }} className={`fullWidthOverride relative ${className} h-[1000px] flex gap-8 justify-center items-center`}>
+        <div className="flex flex-col gap-4 flex-1">
+        <div className="h-fit rounded-[28px] overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300"></div>
+        <div className="h-fit rounded-[28px] overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300"></div>
+        <div className="h-fit rounded-[28px] overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300"></div>
         </div>
-      ))}
+        <div className="flex flex-col gap-4 mt-12 flex-1">
+        <div className="h-fit rounded-[28px] overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300"></div>
+        <div className="h-fit rounded-[28px] overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300">
+            <video src="/images/Parchment - 22 April 2024.mp4" autoPlay loop muted></video>
+        </div>
+        </div>
     </div>
   );
 };
