@@ -45,8 +45,8 @@ const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ className }) => {
   return (
     <div
       ref={showcaseRef}
-      style={{ width: windowWidth, transform: 'translateX(-50%)', left: '50%' }}
-      className={`fullWidthOverride relative ${className} flex gap-2 justify-center items-center mx-2`}
+      style={{ width: windowWidth - 16, transform: 'translateX(-50%)', left: '50%' }}
+      className={`fullWidthOverride relative ${className} flex gap-2 justify-center items-center box-border`}
     >
       <div className="left-column flex flex-col gap-2 flex-1">
         <div className="card h-fit rounded-3xl overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300">

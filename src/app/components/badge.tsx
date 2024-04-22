@@ -5,30 +5,26 @@ import { motion } from 'framer-motion';
 
 interface BadgeProps {
     isMobile: boolean;
-    initialWidth: number;
     texts: string[];
+    initialWidth: number;
     className?: string;
 }
 
-const Badge: React.FC<BadgeProps> = ({ isMobile, initialWidth, texts, className }) => {
+const Badge: React.FC<BadgeProps> = ({ isMobile, texts, initialWidth, className }) => {
     const [index, setIndex] = useState(0);
     const [badgeWidth, setBadgeWidth] = useState(initialWidth);
     const previousIndex = index === 0 ? texts.length - 1 : index - 1;
-
-    if (texts.length > 1) {
-        useEffect(() => {
-            const interval = setInterval(() => {
-                changeBadgeText()
-            }, 6000);
-            return () => clearInterval(interval);
-        }, [index]);
-    }
+    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            changeBadgeText()
+        }, 6000);
+        return () => clearInterval(interval);
+    }, [index]);
 
     const changeBadgeText = () => {
-        if (!texts.includes('Design subscription')) return
-
         // Granular approach since framer motion is finnicky on mobile
-        const measureSpan = document.getElementById('measure');
+        const measureSpan = document.getElementById(`measure${texts[0]}`);
         const opacityTransitionPromise = new Promise<void>((resolve) => {
             setTimeout(() => {
                 resolve();
@@ -41,9 +37,8 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, initialWidth, texts, className 
             }, 350)
         })
 
-        if (measureSpan) {
+        if (measureSpan && texts.length > 1) {
             measureSpan.style.opacity = '0';
-            
             opacityTransitionPromise.then(() => {
                 setIndex((prevIndex) => (prevIndex + 1) % texts.length);
                 measureSpan.textContent = texts[previousIndex]
@@ -105,17 +100,13 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, initialWidth, texts, className 
                 transition={{ type: 'spring', stiffness: 900, damping: 23 }}
                 >
             </motion.div>
-            <div id="measure" 
+            <div id={`measure${texts[0]}`} 
                     className='text-fuchsia-600 pointer-events-none'
                     style={{
                         position: 'absolute',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        top: '-1px',
-                        
-                        height: '100%',
-                        width: '100%',
+                        top:'50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -52%)',
                         whiteSpace: 'pre', 
                         fontFamily: 'Haskoy-med', 
                         fontSize: '14px', 
