@@ -53,14 +53,16 @@ const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ className }) => {
             <Image src={'/images/concept1.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
         </div>
         <div className="card h-fit rounded-3xl overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300">
-            <Image src={'/images/image 8.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
+            <Image src={'/images/grid.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
         </div>
         <div className="card h-fit rounded-3xl overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300">
             <Image src={'/images/logo_consulting.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
         </div>
       </div>
       <div className="right-column flex flex-col gap-2 mt-12 flex-1">
-        <div className="card h-fit rounded-3xl overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300"></div>
+        <div className="card h-fit rounded-3xl overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300">
+            <Image src={'/images/tabs.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
+        </div>
         <div className="card h-fit rounded-3xl overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300">
           <video src="/images/Parchment - 22 April 2024.mp4" autoPlay loop muted playsInline
             style={{pointerEvents: 'none', touchAction:'none'}}
