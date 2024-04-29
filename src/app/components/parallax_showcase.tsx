@@ -49,21 +49,33 @@ const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ className }) => {
       className={`fullWidthOverride relative ${className} flex gap-2 justify-center items-center box-border`}
     >
       <div className="left-column flex flex-col gap-2 flex-1">
-        <div className="card h-fit rounded-3xl overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300">
+        <div className="card h-fit rounded-lg overflow-hidden border-slate-200 border-[.1px] shadow-sm ">
             <Image src={'/images/concept1.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
         </div>
-        <div className="card h-fit rounded-3xl overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300">
-            <Image src={'/images/grid.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
+        <div className="card h-fit rounded-lg overflow-hidden border-slate-200 border-[.1px] shadow-sm ">
+            <Image src={'/images/grid2.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
         </div>
-        <div className="card h-fit rounded-3xl overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300">
-            <Image src={'/images/logo_consulting.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
+        <div className="card h-fit rounded-lg overflow-hidden border-slate-200 border-[.1px] shadow-sm ">
+            <Image src={'/images/logo_consulting_1.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
+        </div>
+        <div className='sm:hidden flex flex-col gap-2'>
+          <div className="card h-fit rounded-lg overflow-hidden border-slate-200 border-[.1px] shadow-sm ">
+              <Image src={'/images/tabs.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
+          </div>
+          <div className="card h-fit rounded-lg overflow-hidden border-slate-200 border-[.1px] shadow-sm">
+            <video src="/images/Parchment - 22 April 2024.mp4" autoPlay loop muted playsInline
+              style={{pointerEvents: 'none', touchAction:'none'}}
+            ></video>
+          </div>
+
         </div>
       </div>
-      <div className="right-column flex flex-col gap-2 mt-12 flex-1">
-        <div className="card h-fit rounded-3xl overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300">
+
+      <div className="right-column flex-col gap-2 mt-12 flex-1 sm:flex hidden">
+        <div className="card h-fit rounded-lg overflow-hidden border-slate-200 border-[.1px] shadow-sm ">
             <Image src={'/images/tabs.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
         </div>
-        <div className="card h-fit rounded-3xl overflow-hidden border-slate-200 border-[.1px] shadow-sm bg-gray-300">
+        <div className="card h-fit rounded-lg overflow-hidden border-slate-200 border-[.1px] shadow-sm ">
           <video src="/images/Parchment - 22 April 2024.mp4" autoPlay loop muted playsInline
             style={{pointerEvents: 'none', touchAction:'none'}}
           ></video>

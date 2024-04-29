@@ -68,7 +68,7 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts, initialWidth, className 
         <div className={`relative w-fit h-fit ${className}`}>
             <motion.div style={{ 
                 width: `${badgeWidth}px`,
-                boxShadow: `#e9d5ff 0px -1.6px 0px 1px inset`,
+                boxShadow: `#f5d0fe 0px -1.6px 0px 1px inset`,
                 transition: `background .4s ease-out, border .3s ease-out`
             }}
                 onClick={() => scrollToPriceCard()}
@@ -101,7 +101,7 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts, initialWidth, className 
                 >
             </motion.div>
             <div id={`measure${texts[0]}`} 
-                    className='text-fuchsia-600 pointer-events-none'
+                    className='text-fuchsia-400 pointer-events-none'
                     style={{
                         position: 'absolute',
                         top:'50%',
