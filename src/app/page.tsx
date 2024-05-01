@@ -60,12 +60,15 @@ export default function Home() {
           text={"powerful visual messages"}
           triggerPoint="0px 0px -400px 0px"
           />
-        <Badge
-          isMobile={isMobileDevice()}
-          texts={["Recent work"]}
-          initialWidth={100}
-          className="mx-auto mt-24"
-        />
+        <div className="relative flex justify-center mt-[50px]">
+          <Badge
+            isMobile={isMobileDevice()}
+            texts={["Recent work"]}
+            initialWidth={100}
+            className=""
+          />
+
+        </div>
         <SeparatorVerticalTopScrew addScrews={['top']} className="transform translate-y-[12px] rotate-0 opacity-75"/>
         <ParallaxShowcase className="mt-[10vw]"/>
         <PriceCard/>
