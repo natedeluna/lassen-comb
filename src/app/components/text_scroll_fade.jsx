@@ -41,7 +41,7 @@ const TextScrollFade = ({ text, triggerPoint }) => {
       ref={ref}
       initial={{ opacity: 0, y: 5 }}
       animate={controls}
-      className="px-10 sm:px-0"
+      className="px-5 sm:px-10"
     >
       {lines.map((line, index) => (
         <motion.div

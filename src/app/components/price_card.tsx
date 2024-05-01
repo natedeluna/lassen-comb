@@ -23,7 +23,8 @@ const PriceCard: React.FC<PriceCardProps> = ({className}) => {
                 relative
                 shadow-sm
                 rounded-2xl
-                w-[350px]
+                w-[300px]
+                sm:w-[350px]
                 mb-10
             `}
             >
@@ -135,7 +136,7 @@ const PriceCard: React.FC<PriceCardProps> = ({className}) => {
                     </div>
                 </div>
 
-                <div id='features' className=' flex flex-col gap-3 text-[#3d3d3d] text-[Haskoy-med] text-[20px]'>
+                <div id='features' className=' flex flex-col gap-3 text-[#3d3d3d] text-[Haskoy-med] text-[16px] sm:text-[20px]'>
                     <div className='flex'>
                         <div className='w-[32px] flex'>
                             <svg className="my-auto" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
