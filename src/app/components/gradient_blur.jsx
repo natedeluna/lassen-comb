@@ -6,7 +6,7 @@ const GradientBlur = () => {
       style={{
         position: "fixed",
         zIndex: 100,
-        top: 0,
+        top: -2,
         left: 0,
         right: 0,
         bottom: "auto",

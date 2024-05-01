@@ -21,6 +21,7 @@ export default function Home() {
 
   return (
     <main className={`relative flex min-h-screen flex-col items-center ${isMobileDevice() ? "pt-[30px]" : "pt-[60px]"} max-w-[500px] > :not(.fullWidthOverride) mx-auto`}>
+      <GradientBlur/>
       <Badge
         isMobile={isMobileDevice()}
         initialWidth={148}
@@ -71,9 +72,18 @@ export default function Home() {
         </div>
         <SeparatorVerticalTopScrew addScrews={['top']} className="transform translate-y-[12px] rotate-0 opacity-75"/>
         <ParallaxShowcase className="mt-[10vw]"/>
+        <br />  
+        <br />  
+        <br />  
         <PriceCard/>
       </section>
-      <GradientBlur/>
+      <br />  
+      <br />  
+      <br />  
+      <div className="font-[Off-curve] text-[18px]  text-slate-500">** Design the world with intention **</div>
+      <br />  
+      <br />  
+      <br />  
     </main>
   );
 }

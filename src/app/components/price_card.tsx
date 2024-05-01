@@ -23,7 +23,7 @@ const PriceCard: React.FC<PriceCardProps> = ({className}) => {
                 relative
                 shadow-sm
                 rounded-2xl
-                w-[300px]
+                w-[325px]
                 sm:w-[350px]
                 mb-10
             `}

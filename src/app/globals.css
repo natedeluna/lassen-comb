@@ -25,6 +25,10 @@
   font-family: 'Haskoy-reg';
   src: url('../../public/fonts/Haskoy-Regular.woff2') format('woff2');
 }
+@font-face {
+  font-family: 'Off-curve';
+  src: url('../../public/fonts/OffCurve.ttf') format('truetype');
+}
 
 @font-face {
   font-family: 'Haskoy-med';
