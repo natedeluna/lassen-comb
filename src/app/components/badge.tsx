@@ -74,16 +74,12 @@ const Badge: React.FC<BadgeProps> = ({ isMobile, texts, initialWidth, className 
                 onClick={() => scrollToPriceCard()}
                 className={`
                     relative 
-                    flex 
-                    flex-col 
                     ${isMobile? "bg-fuchsia-100":"bg-fuchsia-50"}
                     ${isMobile? "active:bg-fuchsia-100":"active:bg-fuchsia-100"}
                     ${isMobile? "active:border-fuchsia-600":"active:border-fuchsia-400"}
                     ${isMobile? "border-fuchsia-500":"border-fuchsia-200"}
                     border-[.5px]
                     rounded-2xl
-                    items-center 
-                    justify-center 
                     py-1
                     h-[30px] 
                     my-3 

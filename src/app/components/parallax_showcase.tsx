@@ -68,7 +68,7 @@ const ParallaxShowcase: React.FC<ParallaxShowcaseProps> = ({ className }) => {
             ></video>
           </div>
           <div className="card h-fit overflow-hidden ">
-              <Image src={'/images/parchment_ui.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
+          <Image src={'/images/parchment_ui.png'} alt='' width={1000} height={1000} style={{width: '100%', height: '100%'}} />
           </div>
         </div>
       </div>
