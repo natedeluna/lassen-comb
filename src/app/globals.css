@@ -26,8 +26,8 @@
   src: url('../../public/fonts/Haskoy-Regular.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Off-curve';
-  src: url('../../public/fonts/OffCurve.ttf') format('truetype');
+  font-family: 'DeFontePlus-Leger';
+  src: url('../../public/fonts/DeFontePlus-Leger.ttf') format('truetype');
 }
 
 @font-face {

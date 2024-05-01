@@ -80,7 +80,7 @@ export default function Home() {
       <br />  
       <br />  
       <br />  
-      <div className="font-[Off-curve] text-[18px]  text-slate-300">** Design the world with intention **</div>
+      <div className="font-[DeFontePlus-Leger] tracking-wide text-[12px]  text-slate-700">** Design the world with intention **</div>
       <br />  
       <br />  
       <br />  
