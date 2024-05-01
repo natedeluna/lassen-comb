@@ -46,15 +46,15 @@ export default function Home() {
         <br />
         <br />
         <TextScrollFade
-          text={"We partner with marketing"}
+          text={"We partner with"}
           triggerPoint="0px 0px -400px 0px"
           />
         <TextScrollFade
-          text={" agencies, startups, and"}
+          text={"marketing agencies,"}
           triggerPoint="0px 0px -400px 0px"
           />
         <TextScrollFade
-          text={"venture capital firms to deliver"}
+          text={"startups, and venture capital firms to deliver"}
           triggerPoint="0px 0px -400px 0px"
           />
         <TextScrollFade
@@ -80,7 +80,7 @@ export default function Home() {
       <br />  
       <br />  
       <br />  
-      <div className="font-[Off-curve] text-[18px]  text-slate-500">** Design the world with intention **</div>
+      <div className="font-[Off-curve] text-[18px]  text-slate-300">** Design the world with intention **</div>
       <br />  
       <br />  
       <br />  
