@@ -2,8 +2,8 @@
 import GradientBlur from "@/app/components/gradient_blur"
 import Badge from "@/app/components/badge";
 import SeparatorVerticalTopScrew from "./components/separator_vertical_top_screw";
-import PriceCard from "@/app/components/price_card";
-import  CanvasAnimation from "@/app/components/canvas_animation";
+import { PriceCard } from "@/app/components/price-card";
+import { LogoParticles } from "@/app/components/logo-particle";
 import ParallaxShowcase from "./components/parallax_showcase";
 import HeroFadeIn from "@/app/components/hero_fade_in"
 import TextScrollFade from "@/app/components/text_scroll_fade";
@@ -21,46 +21,52 @@ export default function Home() {
 
   return (
     <main className={`relative flex min-h-screen flex-col items-center ${isMobileDevice() ? "pt-[30px]" : "pt-[60px]"} max-w-[500px] > :not(.fullWidthOverride) mx-auto`}>
-      <GradientBlur/>
-      <Badge
+      <GradientBlur className={"top-[-2px] bottom-auto transform rotate-180"}/>
+      {/* <Badge
         isMobile={isMobileDevice()}
         initialWidth={148}
         texts={["Design subscription", "Built to world standards"]}
         className=""
-        />
-      <SeparatorVerticalTopScrew addScrews={['bottom']} className="transform rotate-180 opacity-75"/>
+        /> */}
       <section className="relative z-10 hero_1_title max-w-3xl mb-5 text-stone-800 flex flex-col self-start w-full">
-        <CanvasAnimation />
+        <LogoParticles />
+        <br />
+        <br />
         <HeroFadeIn/>
       </section>
       <section className=" main-text w-[100%] relative">
         <br />
+        <br />
+        <br />
         <TextScrollFade
           text={"We are a design studio"}
-          triggerPoint="0px 0px -400px 0px"
+          triggerPoint="0px 0px -300px 0px"
           />
         <TextScrollFade
           text={"based out of Austin, TX."}
-          triggerPoint="0px 0px -400px 0px"
+          triggerPoint="0px 0px -280px 0px"
           />
         <br />
         <br />
         <TextScrollFade
           text={"We partner with"}
-          triggerPoint="0px 0px -400px 0px"
+          triggerPoint="0px 0px -280px 0px"
           />
         <TextScrollFade
           text={"marketing agencies,"}
-          triggerPoint="0px 0px -400px 0px"
+          triggerPoint="0px 0px -280px 0px"
           />
         <TextScrollFade
           text={"startups, and venture capital firms to deliver"}
-          triggerPoint="0px 0px -400px 0px"
+          triggerPoint="0px 0px -280px 0px"
           />
         <TextScrollFade
           text={"powerful visual messages"}
-          triggerPoint="0px 0px -400px 0px"
+          triggerPoint="0px 0px -280px 0px"
           />
+        <br />
+        <br />
+        <br />
         <div className="relative flex justify-center mt-[50px]">
           <Badge
             isMobile={isMobileDevice()}
@@ -70,20 +76,30 @@ export default function Home() {
           />
 
         </div>
-        <SeparatorVerticalTopScrew addScrews={['top']} className="transform translate-y-[12px] rotate-0 opacity-75"/>
         <ParallaxShowcase className="mt-[10vw]"/>
         <br />  
         <br />  
         <br />  
-        <PriceCard/>
+        <PriceCard
+          className="hover:shadow-lg transition-all duration-500 "
+          title="Scale"
+          description="Ideal for fast-growing startups or agencies"
+          price="$3,400"
+          frequency="per month"
+          features={["1 request at a time", "100% satisfaction guarantee", "24/7 support"]}
+        />
       </section>
       <br />  
       <br />  
       <br />  
-      <div className="font-[DeFontePlus-Leger] tracking-wide text-[12px]  text-slate-700">** Design the world with intention **</div>
       <br />  
       <br />  
       <br />  
+      <div className="font-[DeFontePlus-Leger] tracking-wide text-[14px]  text-slate-700">** Design the world with intention **</div>
+      <br />  
+      <br />  
+      <br />
+      <GradientBlur className={"bottom-[-2px] top-auto"}/>
     </main>
   );
 }

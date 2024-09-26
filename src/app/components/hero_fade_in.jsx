@@ -2,9 +2,8 @@ import { motion } from 'framer-motion';
 
 
 const HeroFadeIn = () => {
-    
     const heroLineVariants = {
-    hidden: { opacity: 0, y: -20 },
+    hidden: { opacity: 0, y: -10 },
     visible: (i) => ({
         opacity: 1,
         y: 0,

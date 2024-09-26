@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const CanvasAnimation = () => {
+export const LogoParticles = () => {
   const canvasRef = useRef(null);
   const animationFrameRef = useRef(null);
   const canvasScale = 0.15;
@@ -169,5 +169,3 @@ const CanvasAnimation = () => {
     </div>
   );
 };
-
-export default CanvasAnimation;

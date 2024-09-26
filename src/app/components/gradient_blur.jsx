@@ -1,18 +1,17 @@
 "use client";
 
-const GradientBlur = () => {
+
+const GradientBlur = ({className}) => {
   return (
     <div
+      className={className}
       style={{
         position: "fixed",
         zIndex: 100,
-        top: -2,
         left: 0,
         right: 0,
-        bottom: "auto",
         height: "50px",
         pointerEvents: "none",
-        transform: "rotate(180deg)"
       }}
     >
       <div
