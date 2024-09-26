@@ -160,7 +160,7 @@ export const PriceCard = ({ title, description, price, frequency, features, clas
                         className='
                             relative 
                             text-stone-50 
-                            rounded-[12px]
+                            rounded-[.625rem]
                             flex
                             bg-[black]
                             flex-col
@@ -178,7 +178,7 @@ export const PriceCard = ({ title, description, price, frequency, features, clas
                             select-none
                             font-[Haskoy]
                             font-[550]
-                        '><span className=' relative transform'>Start Now</span>
+                        '><span className=' relative transform'>Book Call</span>
                     </div>
                 </div>
             </div>

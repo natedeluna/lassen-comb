@@ -48,6 +48,7 @@ export default function Home() {
           />
         <br />
         <br />
+        <br />
         <TextScrollFade
           text={"We partner with"}
           triggerPoint="0px 0px -280px 0px"
@@ -62,7 +63,7 @@ export default function Home() {
           />
         <TextScrollFade
           text={"powerful visual messages"}
-          triggerPoint="0px 0px -280px 0px"
+          triggerPoint="0px 0px -240px 0px"
           />
         <br />
         <br />
@@ -86,7 +87,7 @@ export default function Home() {
           description="Ideal for fast-growing startups or agencies"
           price="$3,400"
           frequency="per month"
-          features={["1 request at a time", "100% satisfaction guarantee", "24/7 support"]}
+          features={["1 request at a time", "Product, web, and brand design", "24/7 support", "Cancel or pause anytime", "Unlimited revisions", "48 hour delivery"]}
         />
       </section>
       <br />  
